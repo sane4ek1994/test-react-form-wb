@@ -1,0 +1,41 @@
+{
+  "feedback": [
+    {
+      "id": 1,
+      "email": "test@gmail.com",
+      "name": "test name",
+      "phone": "1234567890"
+    },
+    {
+      "id": 2,
+      "email": "test2@gmail.com",
+      "name": "testname2",
+      "phone": "1434567890"
+    },
+    {
+      "name": "Александр FF",
+      "phone": "89965749726",
+      "email": "mfq07k9cz@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "АлекF",
+      "phone": "8996576",
+      "Email": "m@gmail.com",
+      "email": "m@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Александр FF",
+      "phone": "89965749726",
+      "email": "mfq07k9cz@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Александр FF",
+      "phone": "12312312",
+      "email": "123123213z@gmail.com",
+      "id": 6
+    }
+  ]
+}
