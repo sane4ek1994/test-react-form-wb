@@ -17,9 +17,10 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  border-style: solid;
+  /* border-style: solid;
   border-image: linear-gradient(to right, #15bffd, #9c37fd) 1;
-  border-width: 1px;
+  border-width: 1px; */
+  border-radius: 8px;
   padding: 56px 0px 56px 0px;
   animation-name: border_animation;
   animation-duration: 20s;
@@ -27,6 +28,20 @@
   animation-iteration-count: infinite;
   transition: all 0.4s;
   animation-direction: reverse;
+}
+
+.window:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  padding: 2px;
+  border-radius: 8px;
+  background: linear-gradient(to right, #15bffd, #9c37fd);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 @keyframes border_animation {

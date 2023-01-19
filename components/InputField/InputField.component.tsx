@@ -1,4 +1,3 @@
-import { spawn } from 'child_process'
 import React from 'react'
 import styles from './index.module.scss'
 
@@ -13,8 +12,11 @@ interface Props {
 export const InputField: React.FC<Props> = ({ register, type, placeholder, name, error }) => {
   return (
     <>
-      <input type={type} className={styles.input_field} placeholder={placeholder} {...register(name)} />
-      {error && <span style={{ color: 'red' }}>{error}</span>}
+      <label className={styles.label}>
+        <input type={type} className={styles.input_field} placeholder={placeholder} {...register(name)} />
+        <div className={styles.border}></div>
+        {error && <span style={{ color: 'red' }}>{error}</span>}
+      </label>
     </>
   )
 }
