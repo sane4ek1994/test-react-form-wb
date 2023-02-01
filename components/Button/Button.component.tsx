@@ -1,18 +1,16 @@
 import React from 'react'
 import { useAppSelector } from '../../redux/hooks'
-import styles from './index.module.scss'
+import { IButton } from './types'
 
-interface Props {
-  text: string
-}
+import styles from './button.module.scss'
 
-export const Button: React.FC<Props> = ({ text }) => {
-  const isloading = useAppSelector(state => state.form.isLoading)
+export const Button: React.FC<IButton> = props => {
+  const { text } = props
+  const isloading = useAppSelector(({ form }) => form.isLoading)
+
   return (
-    <>
-      <button disabled={isloading} className={styles.submit}>
-        {text}
-      </button>
-    </>
+    <button className={styles.submit} type='submit' disabled={isloading}>
+      {text}
+    </button>
   )
 }

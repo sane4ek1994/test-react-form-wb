@@ -21,12 +21,12 @@
   border-image: linear-gradient(to right, #15bffd, #9c37fd) 1;
   border-width: 1px; */
   border-radius: 8px;
-  padding: 56px 0px 56px 0px;
+  padding: 56px 0 56px 0;
   animation-name: border_animation;
   animation-duration: 20s;
   animation-delay: 5s;
   animation-iteration-count: infinite;
-  transition: all 0.4s;
+  transition: 0.4s;
   animation-direction: reverse;
 }
 

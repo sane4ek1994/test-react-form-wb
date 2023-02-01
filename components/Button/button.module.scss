@@ -6,12 +6,12 @@
     margin-top: 24px;
     font-size: 20px;
     font-weight: 500;
-    cursor: pointer;
     border-radius: 8px;
-}
+    transition: .5s;
+    border: 3px solid transparent;
 
-.submit:hover {
-    box-shadow: 1px 1px 4px 4px aqua;
-    transition: all .5s;
-    border: none;
+    &:hover {
+        box-shadow: 1px 1px 4px 4px aqua;
+        border-color: #1FF2FF;
+    }
 }
