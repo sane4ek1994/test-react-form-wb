@@ -1,4 +1,4 @@
-import { Form } from '../components'
+import Form from '../components/Form/form.component'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {

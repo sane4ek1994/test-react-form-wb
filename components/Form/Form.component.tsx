@@ -4,7 +4,8 @@ import * as yup from 'yup'
 import { useAppSelector } from '../../redux/hooks'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { requestApi } from '../../api'
-import { InputField, Button } from '../../components'
+import Button from '../Button/button.component'
+import InputField from '../InputField/inputField.component'
 
 import styles from './form.module.scss'
 
@@ -26,8 +27,8 @@ const inputs = [
   }
 ]
 
-export const Form: FC = () => {
-  const { error } = useAppSelector(state => state.form)
+const Form: FC = () => {
+  const { error } = useAppSelector(({ form }) => form)
 
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -71,3 +72,5 @@ export const Form: FC = () => {
     </>
   )
 }
+
+export default Form

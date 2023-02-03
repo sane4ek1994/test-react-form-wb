@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { useAppSelector } from '../../redux/hooks'
 import { IButton } from './types'
 
 import styles from './button.module.scss'
 
-export const Button: React.FC<IButton> = props => {
+const Button: FC<IButton> = props => {
   const { text } = props
   const isloading = useAppSelector(({ form }) => form.isLoading)
 
@@ -14,3 +14,5 @@ export const Button: React.FC<IButton> = props => {
     </button>
   )
 }
+
+export default Button
