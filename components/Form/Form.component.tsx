@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FC } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { useAppSelector } from '../../redux/hooks'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { requestApi } from '../../api'
-import { InputField, Button } from '..'
+import Button from '../Button/button.component'
+import InputField from '../InputField/inputField.component'
 
-import styles from './index.module.scss'
+import styles from './form.module.scss'
 
 const inputs = [
   {
@@ -26,8 +27,8 @@ const inputs = [
   }
 ]
 
-export const Form: React.FC = () => {
-  const { error } = useAppSelector(state => state.form)
+const Form: FC = () => {
+  const { error } = useAppSelector(({ form }) => form)
 
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -46,8 +47,8 @@ export const Form: React.FC = () => {
   } = useForm({ resolver: yupResolver(validatonSchema) })
 
   const onSubmitHandler = (data: any) => {
-    requestApi('/feedback', data, 'POST').then(({ data }) => {
-      console.log('Done')
+    requestApi('/feedback', data, 'POST').then(() => {
+      console.debug('Done')
       alert('Item has been created')
       reset()
     })
@@ -71,3 +72,5 @@ export const Form: React.FC = () => {
     </>
   )
 }
+
+export default Form

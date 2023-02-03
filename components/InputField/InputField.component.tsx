@@ -1,22 +1,20 @@
-import React from 'react'
-import styles from './index.module.scss'
+import React, { FC } from 'react'
+import { IInputField } from './types'
 
-interface Props {
-  register: any
-  type: string
-  placeholder: string
-  name: string
-  error: any
-}
+import styles from './inputField.module.scss'
 
-export const InputField: React.FC<Props> = ({ register, type, placeholder, name, error }) => {
+const InputField: FC<IInputField> = props => {
+  const { register, type, placeholder, name, error } = props
+
   return (
     <>
       <label className={styles.label}>
-        <input type={type} className={styles.input_field} placeholder={placeholder} {...register(name)} />
+        <input className={styles.input_field} type={type} placeholder={placeholder} {...register(name)} />
         <div className={styles.border}></div>
         {error && <span style={{ color: 'red' }}>{error}</span>}
       </label>
     </>
   )
 }
+
+export default InputField
